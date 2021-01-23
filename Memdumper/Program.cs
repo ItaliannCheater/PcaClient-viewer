@@ -117,7 +117,6 @@ namespace Memdumper {
 
             }
 
-            HashSet<string> results = new HashSet<string>();
             Regex rgx = new Regex(@"^TRACE,.+,PcaClient,.+,(\w:\\.+.exe).+$", RegexOptions.Multiline);
 
             Console.WriteLine("PcaClient\n-----------------------\n");
