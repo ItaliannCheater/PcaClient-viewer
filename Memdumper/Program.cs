@@ -119,13 +119,13 @@ namespace Memdumper {
 
             HashSet<string> results = new HashSet<string>();
             Regex rgx = new Regex(@"^TRACE,.+,PcaClient,.+,(\w:\\.+.exe).+$", RegexOptions.Multiline);
-            foreach (string d in dump) {
-                MatchCollection matches = rgx.Matches(d);
-                foreach (Match match in matches) results.Add(match.Groups[1].Value);
-            }
 
             Console.WriteLine("PcaClient\n-----------------------\n");
-            foreach (string r in results) Console.WriteLine(r);
+            foreach (string d in dump) {
+                MatchCollection matches = rgx.Matches(d);
+                foreach (Match match in matches)
+                    Console.WriteLine(match.Groups[1].Value);
+            }
 
             Console.ReadLine();
         }
